@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WYSIWYG</title>
+
+    <link rel="stylesheet" href="/vendors/normalize/normalize-8.0.1.css">
+    <link rel="stylesheet" href="/vendors/fontello/css/fontello.css?_=0.0.1">
+    <link rel="stylesheet" href="/statics/css/main.css">
+
+</head>
+<body onload="load();">
+    <nav>
+        <div class="container">
+            <div class="nav-outer">
+                <div class="logo"><a href="/index.html">WYSIWYG</a></div>
+            </div>
+        </div>
+    </nav>
+    <section class="board">
+        <div class="container">
+            <div class="cont-outer">
+                <form name="form" id="form" method="post" action="" onsubmit="return formSubmit()">
+                    <div class="cont-inner">
+                        <input id="cont-inner-title" class="style-blank cont-inner-title" type="text" name="title" placeholder="제목">
+                    </div>
+
+                    <div class="cont-inner">
+                        <div class="category-wrap">
+                            <select name="category" id="category" class="style-blank" >
+                                <option value="" disabled selected hidden>카테고리</option>
+                                <option value="">선택안함</option>
+                                <option value="">공지사항</option>
+                                <option value="">뉴스</option>
+                            </select>
+                        </div><div class="name-wrap">
+                            <input id="name" class="style-blank" type="text" name="name"placeholder="작성자">
+                        </div>
+                    </div>
+
+                    <div class="cont-inner">
+                        <div class="toolbar-wrap">
+                            <ul class="toolbar-inner">
+                                <li>
+                                    <select id="fontSizeBox"  onchange="changeSize()">
+                                        <option value="" disabled selected hidden>Nomal</option>
+                                        <option value="3">Nomal</option>
+                                        <option value="5">Sub Heading</option>
+                                        <option value="7">Heading</option>
+                                    </select>
+                                </li>
+                            </ul>
+                            <ul class="toolbar-inner">
+                                <li>
+                                    <select id="fontTypeBox"  onchange="changeType()">
+                                        <option value="" disabled selected hidden>Nanum Gothic</option>
+                                        <option value="'Nanum Gothic'">Nanum Gothic</option>
+                                        <option value="'serif'">serif</option>
+                                        <option value="'Arial'">Arial</option>
+                                        <option value="'Monospace'">Monospace</option>
+                                        <option value="'Times New Roman'">Times New Roman</option>
+                                    </select>
+                                </li>
+                            </ul>
+                            <ul class="toolbar-inner">
+                                <li>
+                                    <select id="fontColorBox"  onchange="changeColor()">
+                                        <option value="" disabled selected hidden>Color</option>
+                                        <option value="#333">Black</option>
+                                        <option value="gray">Gray</option>
+                                        <option value="red">Red</option>
+                                        <option value="blue">Blue</option>
+                                        <option value="#5700eb">Purple</option>
+                                    </select>
+                                </li>
+                            </ul>
+                            <ul class="toolbar-inner">
+                                <li onClick="htmledit('bold');">
+                                    <i class="icon-bold-1"></i>
+                                </li><li onClick="htmledit('italic');">
+                                    <i class="icon-italic"></i>
+                                </li><li onClick="htmledit('underline');" class="underline-padding">
+                                    <i class="icon-underline"></i>
+                                </li>
+                            </ul>
+                            <ul class="toolbar-inner">
+                                <li onClick="htmledit('justifyleft');">
+                                    <i class="icon-align-left"></i>
+                                </li><li onClick="htmledit('justifycenter');">
+                                    <i class="icon-align-center"></i>
+                                </li><li onClick="htmledit('justifyright');">
+                                    <i class="icon-align-right"></i>
+                                </li>
+                            </ul>
+                            <ul class="toolbar-inner">
+                                <li onClick="htmledit('justifyleft');htmledit('insertorderedlist');">
+                                   <i class="icon-list-numbered"></i>
+                                </li><li onClick="htmledit('justifyleft');htmledit('insertunorderedlist');">
+                                   <i class="icon-list"></i>
+                                </li>
+                            </ul>
+                            <ul class="toolbar-inner">
+                                <li onClick="htmledit('outdent');">
+                                    <i class="icon-indent-right"></i>
+                                </li><li onClick="htmledit('indent');">
+                                    <i class="icon-indent-left"></i>
+                                </li>
+                            </ul>
+                            
+                            <ul>
+                                <li>
+                                    <div class="img-wrap">
+                                        <label for="img-item"><i class="icon-picture"></i></label>
+                                        <input id="img-item" type="file" multiple>
+                                    </div>
+                                   
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- 글 작성 부분 -->
+                        <iframe name=dhtmlframe></iframe>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+    <script src="/statics/js/main.js"></script>
+    
+</body>
+</html>
